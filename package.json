@@ -1,0 +1,39 @@
+{
+  "name": "bfm-cli",
+  "version": "1.6.0",
+  "description": "A node based tool for calling api gw iam gated routes.",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "package": "pkg .; chmod +x bfm-cli",
+    "update": "echo 'todo'",
+    "update:local": "npm run package && cp bfm-cli $(which bfm-cli)",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brendan Martin <brendanfmartin@gmail.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "aws-sdk": "^2.840.0",
+    "aws4-axios": "^2.3.0",
+    "axios": "^0.21.1",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
+    "minimist": "^1.2.5",
+    "pkg": "^5.1.0",
+    "yargs": "^16.2.0"
+  },
+  "pkg": {
+    "scripts": [
+      "commands/**/*.js"
+    ],
+    "output": "bfm-cli",
+    "targets": [
+      "node14-macos-x64"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
