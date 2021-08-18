@@ -1,5 +1,5 @@
 const h = require('../../config/http');
-const { parseErrors } = require('../../config/axios');
+const { parseErrors } = require('../../helpers/https');
 
 exports.command = 'purge [args]';
 exports.desc = 'Purge at a queue';

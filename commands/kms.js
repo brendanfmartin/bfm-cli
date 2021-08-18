@@ -1,5 +1,6 @@
 const fs = require('fs');
 const h = require('../config/http');
+const { parseErrors } = require('../helpers/https');
 
 exports.command = 'kms [args]';
 exports.desc = 'KMS encrypt the info';
@@ -40,12 +41,6 @@ exports.handler = async (argv) => {
     console.log(t.data);
     process.exit(0);
   } catch (e) {
-    if (e.toJSON) {
-      console.error(e.toJSON());
-      process.exit(-1);
-    } else {
-      console.error(e);
-      process.exit(-1);
-    }
+    parseErrors(e);
   }
 };

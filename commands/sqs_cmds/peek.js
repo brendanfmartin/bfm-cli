@@ -1,5 +1,5 @@
 const h = require('../../config/http');
-const { parseErrors } = require('../../config/axios');
+const { parseErrors } = require('../../helpers/https');
 
 exports.command = 'peek [args]';
 exports.desc = 'Peek at a queue';
@@ -20,7 +20,7 @@ exports.handler = async (argv) => {
     console.log('%j', t.data);
     process.exit(0);
   } catch (e) {
-    parseErrors(e)
+    parseErrors(e);
   }
 
   return url;
